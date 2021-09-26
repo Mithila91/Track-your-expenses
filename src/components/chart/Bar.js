@@ -1,0 +1,23 @@
+import React from 'react'
+
+const Bar = props => {
+    let barFillHeight = '0%'
+    if (props.maxValue > 0) {
+        //will give me the percentage of how much the bar should be filled
+        barFillHeight = Math.round((props.value / props.maxValue) * 100) + '%'
+    }
+
+    return (
+        <div className="chart-bar">
+            <div className="chart-bar-inner">
+                <div className="chart-bar-fill"
+                    style={{ height: barFillHeight }}>
+
+                </div>
+            </div>
+            <div className="chart-bar-label">{props.label}</div>
+        </div>
+    )
+}
+
+export default Bar;
